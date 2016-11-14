@@ -1,0 +1,19 @@
+{
+  "name": "js-ajax",
+  "version": "1.0.0",
+  "description": "JS AJAX DEMO",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js",
+    "ajax",
+    "express"
+  ],
+  "author": "yeiny gonzalez cifuentes <yeinygonzalezcifuentes@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
