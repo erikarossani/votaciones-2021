@@ -71,8 +71,3 @@ var validarDigitos = function(e){
         }
 
 };
-
-
-
-
-   
