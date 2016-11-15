@@ -1,32 +1,32 @@
 [
 	{
-		"nombre" : "Liz Ruelas Borda",
+		"nombre" : "Liz ruelas borda",
         "dni" : "70202170"
 	},
 
 	{
-		"nombre" : "Andrea Cabrera Palomino",
+		"nombre" : "Andrea cabrera palomino",
         "dni" : "71616647"
 
 	},
 
 	{
-		"nombre" : "Evelyn Farfan Valdivia",
+		"nombre" : "Evelyn farfan valdivia",
         "dni": "48073077"
         
 	},
 
 	{
-		"nombre" : "Sheila Acuña Obregon",
+		"nombre" : "Sheila acuña obregon",
         "dni": "46788857"
 	},
 
 	{
-	   "nombre" : "Sheyla Breña Sicha",
+	   "nombre" : "Sheyla breña sicha",
        "dni" : "76311018"
 	},
     {
-	   "nombre" : "Melissa Berrocal Tipte",
+	   "nombre" : "Melissa berrocal tipte",
        "dni" : "45900980"
 	}
 

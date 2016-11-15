@@ -58,6 +58,7 @@ var validarCaracteres = function(e){
             return false;
         }
 
+
 };
 
 var validarDigitos = function(e){
@@ -70,6 +71,7 @@ var validarDigitos = function(e){
         }
 
 };
+
 
 
    
