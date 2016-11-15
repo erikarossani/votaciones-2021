@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    $("#nombre").keydown(validarCaracteres);
+    $("#dni").keydown(validarDigitos);
 
 
     var ingresoDatos=function(response){
@@ -9,49 +11,65 @@ $(document).ready(function(){
         
       $.ajax({
         type: "GET",
-        url: "http://localhost:3002/demo.json", // URL of the Perl script
+        url: "http://localhost:3002/demo.json", 
         contentType: "application/json; charset=utf-8",
         dataType: "json",
-        // script call was *not* successful
+
         error: function(error, textStatus, errorThrown) { 
           $('#loginResult').text("responseText: " + error.responseText 
             + ", textStatus: " + textStatus 
             + ", errorThrown: " + errorThrown);
           $('v#loginResult').addClass("error");
-        }, // error 
-        // script call was successful 
-        // data contains the JSON values returned by the Perl script
+        }, 
+
         success: function(data){
-            var filtrar= $.grep(data, function(element, demo){
-                return element.nombre && element.dni;
 
-            });
+            for (var i = 0  ; i<data.length; i++) {
+                if(data[i].nombre == nombre && data[i].dni == dni){
+                         window.location = "inicio.html";
+                         break;
+                } 
+            }
 
-          if (data.error) { // script returned error
-            $('#loginResult').text("data.error: " + data.error);
-            $('#loginResult').addClass("error");
-          } // if
-          else { // login was successful
-            $('form#loginForm').hide();
-            $('#loginResult').text("data.success: " + data.success 
-              + ", data.userid: " + data.userid);
-            $('#loginResult').addClass("success");
-          } //else
-        } // success
-      }); // ajax
-    } // if
-    else {
-      $('#loginResult').text("No se encuentra el base de datos");
-      $('#loginResult').addClass("error");
-    } // else
+            if (data.error) { 
+               $('#loginResult').text("data.error: " + data.error);
+            } else { 
+               $('#loginResult').text("No se encuentra en la base de datos");
+              } 
+            } 
+        }); 
+    } 
+
     $('#loginResult').fadeIn();
     return false;
     };
 
     $("#boton").click(ingresoDatos);
 
-
 });
+
+
+var validarCaracteres = function(e){
+    var ascii = e.keyCode;
+
+        if (ascii == 32 || ascii == 8 || (ascii >= 97 && ascii <= 122)||(ascii >= 65 && ascii <= 90)) {
+            return true;
+        } else {
+            return false;
+        }
+
+};
+
+var validarDigitos = function(e){
+    var ascii = e.keyCode;
+
+        if (ascii == 8 || (ascii >= 48 && ascii <= 57)) {
+            return true;
+        } else {
+            return false;
+        }
+
+};
 
 
    
